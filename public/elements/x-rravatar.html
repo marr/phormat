@@ -1,0 +1,13 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="x-rravatar" attributes="email">
+    <template>
+        <img src="http://www.gravatar.com/avatar/{{ hash }}" />
+    </template>
+    <script>
+        Polymer('x-rravatar', {
+            emailChanged:function() {
+            this.hash = MD5(this.email);
+        }});
+    </script>
+</polymer-element>

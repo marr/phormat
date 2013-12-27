@@ -11,6 +11,18 @@ logger: "console"
 # (debug, info, warning and error)
 log: "core"
 
+plugins:
+    Facebook:
+        application:
+            app_id: 112167648893042
+            secret: abc2a3fc1b4ad9e5b066af710e4b8290
+        permissions:
+            - create_event
+            - email
+            - offline_access
+            - publish_stream
+            - rsvp_event
+
 # should Dancer consider warnings as critical errors?
 warnings: 1
 
@@ -24,4 +36,4 @@ show_errors: 1
 # Be aware it's unstable and may cause a memory leak.
 # DO NOT EVER USE THIS FEATURE IN PRODUCTION 
 # OR TINY KITTENS SHALL DIE WITH LOTS OF SUFFERING
-auto_reload: 0
+auto_reload: 1
