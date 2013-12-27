@@ -1,0 +1,13 @@
+<polymer-element name="x-rravatar" attributes="email">
+    <template>
+        <img src="http://gravatar.com/avatar/{{ hash }}" />
+    </template>
+    <script>
+        Polymer('x-rravatar', {
+            hash: '',
+            emailChanged:function() {
+                this.hash = MD5(this.email);
+            }
+        });
+    </script>
+</polymer-element>

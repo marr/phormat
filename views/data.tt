@@ -1,0 +1,4 @@
+[% IF tweets %]
+[% USE Dumper %]
+[% Dumper.dump_html(tweets) %]
+[% END %]

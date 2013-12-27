@@ -1,10 +1,21 @@
 package Phormat;
-use Dancer ':syntax';
+use Dancer;
+use Data::Dumper;
+use Phormat::Auth;
+use Phormat::Github;
+use strict;
+use warnings;
 
-our $VERSION = '0.1';
+# ABSTRACT: serve up your social content easily
 
 get '/' => sub {
-    template 'index';
+    #TODO: Show facebook, etc.
+    #For all the github_user properties
+    #look at http://developer.github.com/v3/users/
+    #See the Response for "Get the authenticated user"
+    template 'index', {
+        #user => ph
+    };
 };
 
 true;

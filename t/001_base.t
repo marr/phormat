@@ -1,5 +1,10 @@
-use Test::More tests => 1;
+use Dancer;
 use strict;
-use warnings;
 
-use_ok 'phormat';
+use Test::More import => ['!pass'];
+
+use_ok 'Phormat';
+use_ok 'Phormat::Github';
+use_ok 'Phormat::Auth';
+
+done_testing;

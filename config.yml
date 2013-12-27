@@ -14,15 +14,40 @@ layout: "main"
 # about unicode within your app when this setting is set (recommended).
 charset: "UTF-8"
 
+plugins:
+    Ajax:
+        content_type: 'application/json'
+    "Auth::Github":
+        client_id: ''
+        client_secret: ''
+    "Auth::Twitter":
+        consumer_key: ''
+        consumer_secret: ''
+        callback_url: http://127.0.0.1/auth/twitter/callback
+    Database:
+        driver: "SQLite"
+        database: ":memory:"
+    Facebook:
+        application:
+            app_id: ''
+            secret: ''
+        permissions:
+            - create_event
+            - email
+            - offline_access
+            - publish_stream
+            - rsvp_event
+
+
+session: "YAML"
+
 # template engine
 # simple: default and very basic template engine
 # template_toolkit: TT
 
 template: "template_toolkit"
-
-# template: "template_toolkit"
-# engines:
-#   template_toolkit:
-#     start_tag: '[%'
-#     end_tag:   '%]'
+engines:
+    template_toolkit:
+        start_tag: '[%'
+        end_tag:   '%]'
 

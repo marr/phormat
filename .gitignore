@@ -1,0 +1,8 @@
+.sass-cache
+public/bower_components
+local
+node_modules
+sessions
+vendor
+.build
+.vagrant
