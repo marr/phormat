@@ -1,3 +1,6 @@
+.sass-cache
 public/bower_components
-local/
-sessions/
+local
+node_modules
+sessions
+vendor

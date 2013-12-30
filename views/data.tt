@@ -1,9 +1,0 @@
-<script>
-   var data = [ [% vars.feed_json %] ];
-   if (data.length) {
-   }
-</script>
-<template id="container">
-    <p class="desc">{{ desc }}</p>
-    <p class="link">{{ link }}</p>
-</template>

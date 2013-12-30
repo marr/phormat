@@ -5,12 +5,40 @@
     <script src="javascripts/phormat.js"></script>
     <link rel="import"
           href="bower_components/polymer-ui-tabs/polymer-ui-tabs.html">
-          <link rel="import" href="elements/x-rravatar.html">
+    <link rel="import" href="elements/x-rravatar.html">
+    <link rel="import" href="bower_components/polymer-ajax/polymer-ajax.html">
+
+    <link rel="import" href="elements/x-phobject.html">
   </head>
   <body>
-    <polymer-ui-tabs selected="0">
-    <span><x-rravatar email="dave.marr@gmail.com"/></span><span>Two</span><span>Three</span><span>Four</span><span>Five</span>
-    </polymer-ui-tabs>
-    [% INCLUDE 'data.tt' %]
+    <header>
+        <polymer-ui-tabs selected="1">
+            <x-rravatar email="dave.marr@gmail.com"></x-rravatar>
+            <span>Private</span>
+            <span>Public</span>
+        </polymer-ui-tabs>
+    </header>
+    <polymer-ajax auto url="/data.json"
+        handleAs="json"
+        headers='{"X-Requested-With": "XMLHttpRequest"}'>
+    </polymer-ajax>
+
+      <template id="container" repeat="{{ feed }}">
+          <img src="{{ img }}" />
+          <em class="desc">{{ desc }}</em>
+      </template>
+
+      <script>
+        document.addEventListener('WebComponentsReady', function() {
+            var ajax = document.querySelector("polymer-ajax"),
+                view = document.querySelector('template');
+
+            ajax.addEventListener("polymer-response", function(e) {
+                console.log(e.detail);
+                view.model = e.detail.response;
+            });
+
+        });
+      </script>
   </body>
 </html>
