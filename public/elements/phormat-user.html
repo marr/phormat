@@ -1,0 +1,24 @@
+<link rel="import" href="/bower_components/polymer-ajax/polymer-ajax.html">
+<polymer-ajax auto url="/user.json"
+    handleAs="json"
+    headers='{"X-Requested-With": "XMLHttpRequest"}'>
+</polymer-ajax>
+
+<link rel="import" href="/elements/x-rravatar.html">
+<template bind="response.user" id="ph-user">
+    <x-rravatar id="ph-user-avatar" email="{{ email }}"></x-rravatar>
+</template>
+
+<script>
+document.addEventListener('WebComponentsReady', function() {
+  var ajax = document.querySelector("polymer-ajax");
+  ajax.addEventListener("polymer-response",
+    function(e) {
+      document.querySelector('#ph-user').model = {
+        response: e.detail.response
+      };
+    }
+  );
+});
+Polymer('phormat-user', { });
+</script>

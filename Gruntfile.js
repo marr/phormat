@@ -19,6 +19,13 @@ module.exports = function(grunt) {
                 //].join('&&')
             //},
 
+            server: {
+                options: {
+                    failOnError: true
+                },
+                command: 'plackup -s Starman -a bin/app.pl'
+            },
+
             test: {
                 options: {
                     stdout: true
@@ -45,6 +52,15 @@ module.exports = function(grunt) {
                     dest: 'public/css',
                     ext: '.css'
                 }]
+            }
+        },
+
+        parallel: {
+            assets: {
+                options: {
+                    grunt: true
+                },
+                tasks: ['server', 'default']
             }
         },
 
@@ -81,8 +97,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-parallel');
     grunt.loadNpmTasks('grunt-shell');
 
-    grunt.registerTask('default', ['watch','test']);
+    grunt.registerTask('default', ['parallel']);
+    grunt.registerTask('server', ['shell:server']);
     grunt.registerTask('test', ['shell:test']);
 };
