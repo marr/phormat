@@ -60,7 +60,7 @@ module.exports = function(grunt) {
                 options: {
                     grunt: true
                 },
-                tasks: ['server', 'default']
+                tasks: ['server', 'watch']
             }
         },
 
@@ -84,7 +84,7 @@ module.exports = function(grunt) {
             },
 
             src: {
-                files: ['t/**/*.t', 'lib/**/*.pl'],
+                files: ['lib/**'],
                 tasks: 'test'
             }
         }

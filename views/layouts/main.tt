@@ -6,14 +6,8 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-<header>
-    [% IF !vars.user %]
-        <a href="/auth/github">Login with github</a>
-        <a href="/auth/facebook">or Facebook login</a>
-    [% END %]
-[% content %]
-<div id="footer">
-</div>
+
+    [% content %]
     <script src="/javascripts/phormat.js"></script>
     <script src="/bower_components/platform/platform.js"></script>
     <script src="/bower_components/jquery/jquery.js"></script>

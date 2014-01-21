@@ -1,10 +1,24 @@
-<link rel="import" href="/elements/phormat-user.html">
+<link rel="import" href="/bower_components/polymer-ajax/polymer-ajax.html">
 <link rel="import" href="/bower_components/polymer-ui-tabs/polymer-ui-tabs.html">
 
-<header>
-    <polymer-ui-tabs selected="1">
-        <phormat-user></phormat-user>
-        <span>Private</span>
-        <span>Public</span>
-    </polymer-ui-tabs>
-</header>
+<polymer-ajax auto url="/user.json"
+    handleAs="json"
+    headers='{"X-Requested-With": "XMLHttpRequest"}'>
+</polymer-ajax>
+
+<polymer-ui-tabs selected="1">
+    <phormat-user
+        on-polymer-response="{{ model = response }}">
+    </phormat-user>
+[% IF !vars.user %]
+    <a href="/auth/github">Login with github</a>
+    <a href="/auth/facebook">or Facebook login</a>
+[% ELSE %]
+    <link rel="import" href="/elements/phormat-user.html">
+    <phormat-user></phormat-user>
+[% END %]
+    <span>Private</span>
+    <span>Public</span>
+</polymer-ui-tabs>
+
+<h1>[% session.github_user.login %]</h1>

@@ -252,6 +252,17 @@ DISTRIBUTIONS
       Time::HiRes 0
       Try::Tiny 0.09
       URI 1.59
+  Dancer-Plugin-Auth-Github-0.04
+    pathname: G/GI/GIDEON/Dancer-Plugin-Auth-Github-0.04.tar.gz
+    provides:
+      Dancer::Plugin::Auth::Github 0.04
+    requirements:
+      Dancer 1.311
+      ExtUtils::MakeMaker 0
+      JSON 2.53
+      LWP::UserAgent 6.04
+      Test::More 0
+      perl 5.006
   Dancer-Plugin-Facebook-fbf6756
     pathname: git://github.com/marr/Dancer-Plugin-Facebook.git@fbf6756
     provides:

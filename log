@@ -1,0 +1,34 @@
+Watching bin/lib bin/app.pl for file updates.
+[12339] debug @0.000012> Loaded config.. in /Users/dmarr/projects/phormat/local/lib/perl5/Dancer/Plugin/Auth/Github.pm l. 51
+[12339] debug @0.000166> Setting up fb access in /Users/dmarr/projects/phormat/local/lib/perl5/Dancer/Plugin/Facebook.pm l. 306
+[12339] debug @0.000523> Settings are {'application' => {'app_id' => '112167648893042','secret' => 'abc2a3fc1b4ad9e5b066af710e4b8290'},'permissions' => ['create_event','email','offline_access','publish_stream','rsvp_event']} in /Users/dmarr/projects/phormat/local/lib/perl5/Dancer/Plugin/Facebook.pm l. 310
+[12339] debug @0.000627> Setting application information in /Users/dmarr/projects/phormat/local/lib/perl5/Dancer/Plugin/Facebook.pm l. 314
+[12339] debug @0.000714> Setting hook to clear facebook context in /Users/dmarr/projects/phormat/local/lib/perl5/Dancer/Plugin/Facebook.pm l. 322
+[12339] debug @0.000850> Creating handler for /auth/facebook in /Users/dmarr/projects/phormat/local/lib/perl5/Dancer/Plugin/Facebook.pm l. 347
+[12339] debug @0.001049> Creating handler for /auth/facebook/postback in /Users/dmarr/projects/phormat/local/lib/perl5/Dancer/Plugin/Facebook.pm l. 351
+[12339] debug @0.001239> Settings are {'application' => {'app_id' => '112167648893042','secret' => 'abc2a3fc1b4ad9e5b066af710e4b8290'},'permissions' => ['create_event','email','offline_access','publish_stream','rsvp_event']} in /Users/dmarr/projects/phormat/local/lib/perl5/Dancer/Plugin/Facebook.pm l. 269
+[12339] debug @0.001467> Done setting up fb access in /Users/dmarr/projects/phormat/local/lib/perl5/Dancer/Plugin/Facebook.pm l. 355
+[12339]  core @0.002738> PLACK_ENV is set (development) forcing PSGI handler in /Users/dmarr/projects/phormat/local/lib/perl5/Dancer/Handler.pm l. 31
+[12339]  core @0.003709> loading Dancer::Handler::PSGI handler in /Users/dmarr/projects/phormat/local/lib/perl5/Dancer/Handler.pm l. 45
+[12339]  core @0.006980> loading handler 'Dancer::Handler::PSGI' in /Users/dmarr/projects/phormat/local/lib/perl5/Dancer.pm l. 483
+2014/01/05-22:50:29 Starman::Server (type Net::Server::PreFork) starting! pid(12339)
+Resolved [*]:5000 to [0.0.0.0]:5000, IPv4
+Binding to TCP port 5000 on host 0.0.0.0 with IPv4
+Setting gid to "20 20 20 12 61 79 80 81 98 33 100 204 398 399"
+Starman: Accepting connections at http://*:5000/
+[12341]  core @0.000776> request: GET / from 127.0.0.1 in /Users/dmarr/projects/phormat/local/lib/perl5/Dancer/Handler.pm l. 56
+[12341]  core @0.015105> [hit #1]Trying to match 'GET /' against /^\/([^\/]+)\.json$/ (generated from '/:node.json') in /Users/dmarr/projects/phormat/local/lib/perl5/Dancer/Route.pm l. 84
+[12341]  core @0.015398> [hit #1]Trying to match 'GET /' against /^\/auth\/github\/callback$/ (generated from '/auth/github/callback') in /Users/dmarr/projects/phormat/local/lib/perl5/Dancer/Route.pm l. 84
+[12341]  core @0.015590> [hit #1]Trying to match 'GET /' against /^\/auth\/facebook$/ (generated from '/auth/facebook') in /Users/dmarr/projects/phormat/local/lib/perl5/Dancer/Route.pm l. 84
+[12341]  core @0.015779> [hit #1]Trying to match 'GET /' against /^\/auth\/facebook\/postback$/ (generated from '/auth/facebook/postback') in /Users/dmarr/projects/phormat/local/lib/perl5/Dancer/Route.pm l. 84
+[12341]  core @0.015966> [hit #1]Trying to match 'GET /' against /^\/$/ (generated from '/') in /Users/dmarr/projects/phormat/local/lib/perl5/Dancer/Route.pm l. 84
+[12341]  core @0.016150> [hit #1]  --> got 1 in /Users/dmarr/projects/phormat/local/lib/perl5/Dancer/Route.pm l. 102
+[12341]  core @0.016673> [hit #1]entering before hook in /Users/dmarr/projects/phormat/local/lib/perl5/Dancer/Hook.pm l. 58
+[12341]  core @0.016925> [hit #1]entering before hook in /Users/dmarr/projects/phormat/local/lib/perl5/Dancer/Hook.pm l. 58
+[12341]  core @0.017081> [hit #1]entering before hook in /Users/dmarr/projects/phormat/local/lib/perl5/Dancer/Hook.pm l. 58
+[12341]  core @0.021033> [hit #1]entering after hook in /Users/dmarr/projects/phormat/local/lib/perl5/Dancer/Hook.pm l. 58
+[12341]  core @0.021947> [hit #1]response: 302 in /Users/dmarr/projects/phormat/local/lib/perl5/Dancer/Handler.pm l. 179
+127.0.0.1 - - [05/Jan/2014:22:50:39 -0800] "GET / HTTP/1.1" 302 0 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1769.2 Safari/537.36"
+Killing the existing server (pid:12339)
+2014/01/05-22:52:52 Server closing!
+2014/01/05-22:52:52 Server closing!
