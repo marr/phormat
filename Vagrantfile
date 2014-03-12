@@ -13,6 +13,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.customize ["modifyvm", :id, "--memory", "512"]
   end
 
+  config.vm.provision "chef_solo" do |chef|
+    chef.add_recipe "phormat"
+  end
+
   config.vm.provision "docker" do |d|
     d.run "carton",
       cmd: "bash -l",
