@@ -1,3 +1,4 @@
+use Test::More tests => 1;
 use strict;
 use warnings;
 
@@ -6,7 +7,6 @@ use Phormat;
 use Dancer::Test;
 
 my $res = dancer_response GET => '/auth/facebook';
-ok(1);
-print STDERR $res;
-#my $req = 
+ok(ref $res eq 'Dancer::Response');
+
 done_testing;

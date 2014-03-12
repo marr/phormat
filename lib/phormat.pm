@@ -4,7 +4,7 @@ use Dancer::Plugin::Ajax;
 use Dancer::Plugin::Facebook;
 use Dancer::Plugin::Auth::Github;
 
-use Phormat::User;
+set serializer => 'JSON';
 
 auth_github_init();
 setup_fb '/auth/facebook';
@@ -12,7 +12,6 @@ setup_fb '/auth/facebook';
 get '/' => sub {
     #TODO: Show facebook, etc.
     vars facebook_id => fb->{id};
-   "Hello, ".session('github_user')->{'login'};
     #For all the github_user properties
     #look at http://developer.github.com/v3/users/
     #See the Response for "Get the authenticated user"
@@ -39,7 +38,7 @@ ajax '/user.json' => sub {
     var photos => fb->fetch('me/photos');
     var feed => fb->fetch('me/feed');
     var user => fb->fetch('me');
-    to_json( vars );
+    vars;
 };
 
 hook 'before' => sub {

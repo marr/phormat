@@ -1,4 +1,5 @@
-use Test::More tests => 2;
+use Test::More tests => 1;
+use Data::Dumper;
 use strict;
 use warnings;
 
@@ -6,5 +7,10 @@ use warnings;
 use Phormat;
 use Dancer::Test;
 
-route_exists [GET => '/'], 'a route handler is defined for /';
-response_status_is ['GET' => '/'], 200, 'response status is 200 for /';
+my $res = dancer_response GET => '/user.json', {
+    headers => [{'X-Requested-With' => 'XMLHttpRequest'}]
+};
+
+print STDERR Dumper($res->{content});
+
+ok $res->{content};

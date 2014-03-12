@@ -17,6 +17,10 @@ charset: "UTF-8"
 plugins:
     'Ajax':
         content_type: 'application/json'
+    'Auth::Github':
+        client_id: 9d9d20ac01b2150948d3
+        client_secret: 643be3207aaf1024fd5e66dd19da921b18d66c22
+        
 
 session: "YAML"
 
