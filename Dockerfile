@@ -1,5 +1,9 @@
-FROM phormat
+FROM phusion/baseimage
 
 MAINTAINER "Dave Marr <dave.marr@gmail.com>"
 
-RUN run.sh
+ADD . /src
+
+WORKDIR /src
+
+RUN ./run.sh

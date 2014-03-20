@@ -7,6 +7,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     config.vm.provision "docker",
         images: ["phusion/baseimage"]
+    
+    config.vm.provision "chef_solo" do |chef|
+        chef.cookbooks_path = ["site-cookbooks", "cookbooks"]
+        chef.add_recipe "phormat"
+    end
 
-   config.vm.synced_folder "src/", "/srv/myapp"
+    config.vm.synced_folder "src/", "/srv/myapp"
+    config.vm.synced_folder "src/chef-plenv/", "/vagrant/chefrepo"
 end

@@ -1,0 +1,6 @@
+{
+  "run_list" : [
+    "recipe[phormat::phree]",
+    "recipe[phormat::plenv]"
+  ]
+}
