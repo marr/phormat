@@ -4,6 +4,9 @@ local
 node_modules
 sessions
 vendor
+dist
 .build
 .vagrant
+.sass-cache
+.tmp
 /cookbooks/
