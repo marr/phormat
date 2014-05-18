@@ -16,7 +16,7 @@ require.config({
 require(['app'], function (App) {
 	// use app here
 	React.renderComponent(
-		<App />,
+		<App schemaUrl="schema" />,
 		document.getElementById('app')
 	);
 });

@@ -1,16 +1,16 @@
 /** @jsx React.DOM */
 'use strict';
-define([], function () {
+define(['status'], function (Status) {
 	return React.createClass({
 		getInitialState: function() {
-			return {message: 'Hello World!'};
+			return {message: 'Loading!'};
 		},
 		goodbye: function(event) {
-			this.setState({message: 'Goodbye World.'});
+			this.setState({message: 'Goodbye.'});
 		},
 		render: function() {
 			return (
-				<h1 onClick={this.goodbye}>{this.state.message}</h1>
+                <Status message={this.state.message}/>
 			);
 		}
 	});
