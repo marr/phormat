@@ -1,21 +1,24 @@
 package Phormat;
+
+use DDP;
 use Dancer;
-use Data::Dumper;
-use Phormat::Auth;
-use Phormat::Github;
-use strict;
-use warnings;
+use Moo;
+use namespace::clean;
 
 # ABSTRACT: serve up your social content easily
+has status => (
+    is => 'ro'
+);
 
-get '/' => sub {
-    #TODO: Show facebook, etc.
-    #For all the github_user properties
-    #look at http://developer.github.com/v3/users/
-    #See the Response for "Get the authenticated user"
-    template 'index', {
-        #user => ph
-    };
+get '/status' => sub {
+    print '100%';
 };
 
-true;
+sub new {
+    my $env     = shift;
+    my $request = Dancer::Request->new( env => $env );
+    Dancer->dance($request);
+    p $env;
+};
+
+1;
