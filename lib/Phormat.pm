@@ -1,24 +1,22 @@
 package Phormat;
 
+# ABSTRACT: serve up your social content easily
+use namespace::clean;
+use strict;
+
 use DDP;
 use Dancer;
+use Dancer::Plugin::Ajax;
 use Moo;
-use namespace::clean;
 
-# ABSTRACT: serve up your social content easily
-has status => (
-    is => 'ro'
-);
+# set port => 3001;
 
-get '/status' => sub {
-    print '100%';
+get '/' => sub {
+    'you are home, bud';
 };
 
-sub new {
-    my $env     = shift;
-    my $request = Dancer::Request->new( env => $env );
-    Dancer->dance($request);
-    p $env;
+ajax '/status' => sub {
+    '100%';
 };
 
-1;
+true;

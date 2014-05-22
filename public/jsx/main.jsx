@@ -4,7 +4,7 @@
 require.config({
 	baseUrl: 'scripts',
 	paths: {
-		react: 'script/react.min'
+		react: 'script/react.min',
 	},
 	shim: {
 		react: {
@@ -13,10 +13,12 @@ require.config({
 	}
 });
 
-require(['app'], function (App) {
+require(['app' ], function (App, Bootstrap) {
 	// use app here
 	React.renderComponent(
-		<App schemaUrl="schema" />,
+		<App schemaUrl="schema">
+        </App>,
+        
 		document.getElementById('app')
 	);
 });

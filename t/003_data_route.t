@@ -5,7 +5,8 @@ use warnings;
 use Dancer::Test;
 use Phormat;
 
-my $phormat = Phormat->new;
+my $app = Phormat->new;
+
 my $res = dancer_response (GET => 'status', {
     headers => [{ 'X-Requested-With' => 'XMLHttpRequest'}]
 });
