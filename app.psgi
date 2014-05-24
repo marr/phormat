@@ -1,7 +1,6 @@
 use Plack::Builder;
-use Phormat::Web;
 
-my $app = require Phormat;
+my $app = require Phormat::Web;
 
 builder {
     enable 'Debug', panels => [
