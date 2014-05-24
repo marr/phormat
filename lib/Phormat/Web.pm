@@ -9,4 +9,4 @@ get '/' => sub {
     
 };
 
-dance;
+true;
