@@ -1,9 +1,8 @@
 use Plack::Builder;
 use Phormat::Web;
 
-my $app = Phormat->new(
-    config => Phormat::Web::config
-);
+my $app = require Phormat;
+
 builder {
     enable 'Debug', panels => [
         qw(
@@ -14,7 +13,7 @@ builder {
             Dancer::Version
             Dancer::Settings
             Parameters
-        ) ] if $app->config->{environment} eq 'development';
+        ) ] if Phormat::Web::config->{environment} eq 'development';
     $app;
 };
 
