@@ -1,11 +1,9 @@
-use Dancer;
-use Phormat;
 use Plack::Builder;
-use strict;
+use Phormat::Web;
 
-my $app = Phormat->new;
-use DDP; p $app;
-
+my $app = Phormat->new(
+    config => Phormat::Web::config
+);
 builder {
     enable 'Debug', panels => [
         qw(
@@ -16,7 +14,7 @@ builder {
             Dancer::Version
             Dancer::Settings
             Parameters
-        ) ] if config->{environment} eq 'development';
-    $app->dance;
+        ) ] if $app->config->{environment} eq 'development';
+    $app;
 };
 
