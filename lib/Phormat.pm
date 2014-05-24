@@ -5,4 +5,4 @@ has config => (
     is => 'ro'
 );
 
-1
+1;
