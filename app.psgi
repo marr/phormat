@@ -12,7 +12,7 @@ builder {
             Dancer::Version
             Dancer::Settings
             Parameters
-        ) ] if Phormat::Web::config->{environment} eq 'development';
+        ) ] if Phormat::Web::config()->{environment} eq 'development';
     $app;
 };
 
