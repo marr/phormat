@@ -1,0 +1,10 @@
+<h1>Pictures</h1>
+<table>
+  <tbody>
+    <% @pics.each do |pic| %>
+      <tr>
+        <td><%= link_to pic.filename, pic %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
